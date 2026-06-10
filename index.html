@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,37 +15,34 @@
             margin: 0;
             padding: 0;
         }
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
 
-        body {
-            background: linear-gradient(-45deg,
-                    #03031d,
-                    #0a0a5c,
-                    #180b30,
-                    #03031d);
-            background-size: 400% 400%;
-            animation: gradient 10s ease infinite;
-        }
+    background:
+        radial-gradient(circle at 20% 20%, #7b2cbf 0%, transparent 30%),
+        radial-gradient(circle at 80% 30%, #3a0ca3 0%, transparent 30%),
+        radial-gradient(circle at 50% 80%, #7209b7 0%, transparent 35%),
+        #050816;
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
+    background-size: 200% 200%;
+    animation: aurora 12s ease infinite;
+}
 
-            50% {
-                background-position: 100% 50%;
-            }
+@keyframes aurora {
+    0% {
+        background-position: 0% 50%;
+    }
 
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+    50% {
+        background-position: 100% 50%;
+    }
 
-        body {
-            background-color: rgb(3, 3, 29);
-            color: white;
-            font-family: 'poppins', sans-serif;
-        }
-
+    100% {
+        background-position: 0% 50%;
+    }
+}
         nav {
             display: flex;
             justify-content: space-around;
@@ -157,10 +154,22 @@
         }
 
         .image-top {
-            width: 23px;
+            width: 54px;
             position: relative;
-            top: -32px;
-            left: -9px;
+            top: -24px;
+            left: -25px;
+        }
+        .image-top2{
+            width: 54px;
+            position: relative;
+            top: -34px;
+            left: -25px;
+        }
+        .image-top3{
+            width: 34px;
+            position: relative;
+            top: -36px;
+            left: -15px;
         }
 
         .verticle-title {
@@ -232,16 +241,39 @@
             transform: translateY(-2px);
         }
 
-        .rightSection img {
-            width: 80%;
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgba(175, 107, 239, 0.7);
-            transition: 0.5s;
-        }
+        .rightSection {
+    position: relative;
+}
 
-        .rightSection img:hover {
-            transform: scale(1.05);
-        }
+.rightSection::before {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        45deg,
+        #c77dff,
+        #7209b7,
+        #4361ee,
+        #c77dff
+    );
+
+    animation: rotate 6s linear infinite;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 
         .skills {
             text-align: center;
@@ -283,6 +315,103 @@
                     #c77dff,
                     transparent);
         }
+        @media screen and (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 8px 12px;
+    }
+
+    .firstSection {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .firstSection > div {
+        width: 90%;
+    }
+
+    .leftSection {
+        font-size: 1.5rem;
+        margin: 30px 0;
+    }
+
+    .rightSection img {
+        width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .btn {
+        width: 200px;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .skills {
+        margin: 50px 0;
+    }
+
+    .skill-card {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .secondsection {
+        height: auto;
+    }
+
+    .secondsection .box {
+        flex-direction: column;
+        width: 2px;
+        height: auto;
+        margin-left: 30px;
+    }
+
+    .secondsection .verticle {
+        margin: 60px 0;
+    }
+
+    .verticle-title,
+    .verticle-desc {
+        width: 220px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .footer > div {
+        width: 100%;
+    }
+
+    main hr {
+        margin: 40px 20px;
+    }
+}
     </style>
 </head>
 
@@ -293,10 +422,10 @@
             <div class="right">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">About</li></a>
-                    <li><a href="/">Services</li></a>
-                    <li> <a href="/">Projects</li></a>
-                    <li><a href="/">Contact Me</li></a>
+                    <li><a href="/">About</a></li>
+<li><a href="/">Services</a></li>
+                    <li> <a href="/">Projects</a></li>
+                    <li><a href="/">Contact Me</a></li>
                 </ul>
             </div>
         </nav>
@@ -335,27 +464,31 @@
             <div class="box">
 
                 <div class="verticle">
-                    <img class="image-top" src="developer.png" alt="">
+                    <img class="image-top" src="html.png" alt="">
 
                     <div class="verticle-title">
                         HTML Developer
                     </div>
 
                     <div class="verticle-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Temporibus cumque officiis corporis assumenda.
+           <p>
+I have successfully completed HTML and can build responsive,
+modern, and user-friendly websites.
+</p>
                     </div>
                 </div>
                 <div class="verticle">
-                    <img class="image-top" src="css.jng.png" alt="CSS Logo">
+                    <img class="image-top2" src="css.jng.png" alt="CSS Logo">
 
                     <div class="verticle-title">
                         CSS Developer
                     </div>
 
                     <div class="verticle-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Temporibus cumque officiis corporis assumenda.
+                        <p>
+Passionate Frontend Developer skilled in HTML and CSS, creating
+responsive and visually appealing web experiences.
+</p>
                     </div>
                 </div>
                 <!-- <div class="verticle">
@@ -396,7 +529,7 @@
                 </div> -->
 
                 <div class="verticle">
-                    <img class="image-top" src="developer.png" alt="">
+                    <img class="image-top3" src="ns.png" alt="">
 
                     <div class="verticle-title">
                         NodeJS Developer
